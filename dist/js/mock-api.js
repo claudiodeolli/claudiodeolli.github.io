@@ -1039,14 +1039,14 @@
       '}',
       '.main-menu .navigation li.nav-item:not(.active) > a:hover,',
       '.main-menu .navigation li.nav-item:not(.active).hover > a {',
-      '  background: rgba(255, 255, 255, 0.14) !important;',
-      '  color: #fff !important;',
+      '  background: rgba(0, 144, 255, 0.08) !important;',
+      '  color: #0090ff !important;',
       '  border-radius: 4px;',
       '}',
       '.main-menu .navigation li.nav-item ul li:not(.active) > a:hover,',
       '.main-menu .navigation li.nav-item ul li:not(.active).hover > a {',
-      '  background: rgba(255, 255, 255, 0.14) !important;',
-      '  color: #fff !important;',
+      '  background: rgba(0, 144, 255, 0.08) !important;',
+      '  color: #0090ff !important;',
       '  border-radius: 4px;',
       '}'
     ].join('\n');

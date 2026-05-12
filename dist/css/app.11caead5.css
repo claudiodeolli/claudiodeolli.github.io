@@ -38025,41 +38025,42 @@ body.dark-layout pre {
     --marshalls-blue: #0090ff;
 }
 
-/* ── Sidebar background: gradiente dark navy → bright blue ─── */
+/* ── Sidebar background: branco ────────────────────────────── */
 [dir] .main-menu.menu-light,
 [dir] .main-menu.menu-light .navigation {
-    background: linear-gradient(rgb(3, 10, 51) 0%, rgb(0, 144, 255) 100%) !important;
+    background: #fff !important;
 }
 
-/* ── Sidebar: textos brancos sobre fundo escuro ─────────────── */
+/* ── Sidebar: textos e ícones azuis sobre fundo branco ──────── */
 .main-menu.menu-light {
-    color: rgba(255,255,255,0.85) !important;
+    color: #030a33 !important;
 }
 
 .main-menu.menu-light .navigation .navigation-header {
-    color: rgba(255,255,255,0.5) !important;
+    color: #0090ff !important;
+    font-weight: 600 !important;
 }
 
 .main-menu.menu-light .navigation li a {
-    color: rgba(255,255,255,0.82) !important;
+    color: #030a33 !important;
 }
 
 .main-menu.menu-light .navigation li a svg,
 .main-menu.menu-light .navigation li a i {
-    color: rgba(255,255,255,0.82) !important;
+    color: #0090ff !important;
 }
 
 /* ── Sidebar: item active ─────────────────────────────────── */
 .main-menu.menu-light .navigation li.active > a {
-    color: #fff !important;
+    color: #0090ff !important;
     font-weight: 600 !important;
-    box-shadow: 0 0 10px 1px rgba(0,144,255,0.7) !important;
-    background: rgba(255,255,255,0.18) !important;
+    box-shadow: 0 2px 15px 0 rgba(0,144,255,0.3) !important;
+    background: rgba(0,144,255,0.12) !important;
 }
 
 .main-menu.menu-light .navigation li.active > a svg,
 .main-menu.menu-light .navigation li.active > a i {
-    color: #fff !important;
+    color: #0090ff !important;
 }
 
 /* ── Sidebar: hover ───────────────────────────────────────── */
@@ -38067,8 +38068,8 @@ body.dark-layout pre {
 .main-menu .navigation li.nav-item:not(.active).hover > a,
 .main-menu .navigation li.nav-item ul li:not(.active) > a:hover,
 .main-menu .navigation li.nav-item ul li:not(.active).hover > a {
-    background: rgba(255,255,255,0.14) !important;
-    color: #fff !important;
+    background: rgba(0,144,255,0.08) !important;
+    color: #0090ff !important;
     border-radius: 4px !important;
 }
 
