@@ -827,22 +827,22 @@
             icon: "HomeIcon",
             gate: "panel"
         }, {
-            header: "Contabilidade",
+            header: "Financeiro",
             gate: ["companies", "taxes", "subscriptions"]
         }, {
-            title: "Empresa",
+            title: "Relatórios",
             route: "empresa/detalhes",
-            icon: "BriefcaseIcon",
+            icon: "BarChart2Icon",
             gate: "companies"
         }, {
-            title: "Impostos",
+            title: "Embaixadores",
             route: "impostos",
-            icon: "FileTextIcon",
+            icon: "UsersIcon",
             gate: "taxes"
         }, {
-            title: "Declarações",
+            title: "Indicadores",
             route: "declaracoes",
-            icon: "CalendarIcon",
+            icon: "TrendingUpIcon",
             gate: "taxes"
         }, {
             title: "Notas fiscais",
@@ -850,35 +850,55 @@
             icon: "FolderIcon",
             gate: "taxes"
         }, {
-            title: "Assinatura",
+            title: "Pagamentos",
             route: "assinaturas",
             icon: "CreditCardIcon",
             gate: "subscriptions"
         }, {
-            header: "Minha conta",
+            title: "Requerimentos",
+            href: "#",
+            icon: "ClipboardIcon",
+            gate: "subscriptions"
+        }, {
+            header: "Marshallsmed",
             gate: ["user", "digital_certificate"]
         }, {
-            title: "Dados pessoais",
+            title: "Painel ADM",
             route: "perfil",
             icon: "UserIcon",
             gate: "user"
         }, {
-            title: "Certificado (e-CPF)",
+            title: "Geral Clientes",
             route: "certificado-digital",
             icon: "ServerIcon",
             gate: "digital_certificate"
         }, {
-            title: "Minhas empresas",
+            title: "Geral Empresas",
             route: "empresas",
             icon: "ArchiveIcon",
             gate: "companies_list"
         }, {
-            header: "Benefícios",
+            title: "Cobranças",
+            href: "#",
+            icon: "DollarSignIcon",
+            gate: "user"
+        }, {
+            header: "Documentação",
             gate: ["user"]
         }, {
-            title: "Nossos parceiros",
+            title: "API",
             route: "parceiros",
-            icon: "AwardIcon",
+            icon: "CodeIcon",
+            gate: "user"
+        }, {
+            title: "Checkouts",
+            href: "#",
+            icon: "ShoppingCartIcon",
+            gate: "user"
+        }, {
+            title: "E-mails",
+            href: "#",
+            icon: "MailIcon",
             gate: "user"
         }, {
             title: "Painel",
