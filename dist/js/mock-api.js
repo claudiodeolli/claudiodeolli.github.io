@@ -737,7 +737,7 @@
                     return h('div', {
                       key: co.id,
                       staticClass: 'card mb-1',
-                      style: { cursor: 'pointer', border: selected ? '2px solid #fe3e6d' : '1px solid #ebe9f1' },
+                      style: { cursor: 'pointer', border: selected ? '2px solid #0090ff' : '1px solid #ebe9f1' },
                       on: { click: function () { self.select(co); } }
                     }, [
                       h('div', { staticClass: 'card-body d-flex align-items-center justify-content-between' }, [
@@ -1039,14 +1039,14 @@
       '}',
       '.main-menu .navigation li.nav-item:not(.active) > a:hover,',
       '.main-menu .navigation li.nav-item:not(.active).hover > a {',
-      '  background: rgba(254, 62, 109, 0.12) !important;',
-      '  color: #fe3e6d !important;',
+      '  background: rgba(255, 255, 255, 0.14) !important;',
+      '  color: #fff !important;',
       '  border-radius: 4px;',
       '}',
       '.main-menu .navigation li.nav-item ul li:not(.active) > a:hover,',
       '.main-menu .navigation li.nav-item ul li:not(.active).hover > a {',
-      '  background: rgba(254, 62, 109, 0.12) !important;',
-      '  color: #fe3e6d !important;',
+      '  background: rgba(255, 255, 255, 0.14) !important;',
+      '  color: #fff !important;',
       '  border-radius: 4px;',
       '}'
     ].join('\n');

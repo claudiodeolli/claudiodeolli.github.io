@@ -133,27 +133,27 @@
 }
 
 [dir] .timeline-variant-primary.timeline-item-fill-border-primary[data-v-4bbac430] {
-    border-color: #fe3e6d!important
+    border-color: #0090ff!important
 }
 
 [dir] .timeline-variant-primary.timeline-item-fill-border-primary[data-v-4bbac430]:last-of-type:after {
-    background: linear-gradient(#fe3e6d,#fff)
+    background: linear-gradient(#0090ff,#fff)
 }
 
 [dir] .timeline-variant-primary .timeline-item-point[data-v-4bbac430] {
-    background-color: #fe3e6d
+    background-color: #0090ff
 }
 
 [dir] .timeline-variant-primary .timeline-item-point[data-v-4bbac430]:before {
-    background-color: rgba(254,62,109,.12)
+    background-color: rgba(0,144,255,.12)
 }
 
 .timeline-variant-primary .timeline-item-icon[data-v-4bbac430] {
-    color: #fe3e6d
+    color: #0090ff
 }
 
 [dir] .timeline-variant-primary .timeline-item-icon[data-v-4bbac430] {
-    border: 1px solid #fe3e6d
+    border: 1px solid #0090ff
 }
 
 [dir] .timeline-variant-secondary.timeline-item-fill-border-secondary[data-v-4bbac430] {
