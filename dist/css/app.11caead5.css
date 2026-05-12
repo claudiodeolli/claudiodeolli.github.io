@@ -38052,15 +38052,15 @@ body.dark-layout pre {
 
 /* ── Sidebar: item active ─────────────────────────────────── */
 .main-menu.menu-light .navigation li.active > a {
-    color: #0090ff !important;
+    color: #fff !important;
     font-weight: 600 !important;
-    box-shadow: 0 2px 15px 0 rgba(0,144,255,0.3) !important;
-    background: rgba(0,144,255,0.12) !important;
+    box-shadow: 0 2px 15px 0 rgba(0,144,255,0.4) !important;
+    background: #0090ff !important;
 }
 
 .main-menu.menu-light .navigation li.active > a svg,
 .main-menu.menu-light .navigation li.active > a i {
-    color: #0090ff !important;
+    color: #fff !important;
 }
 
 /* ── Sidebar: hover ───────────────────────────────────────── */
