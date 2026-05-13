@@ -900,6 +900,14 @@
             href: "#",
             icon: "MailIcon",
             gate: "user"
+        }, {
+            header: "Configuração",
+            gate: ["user"]
+        }, {
+            title: "Mudar minha senha",
+            route: "perfil",
+            icon: "LockIcon",
+            gate: "user"
         }]
           , m = t("91e9");
         function h(e, a, route_next) {
