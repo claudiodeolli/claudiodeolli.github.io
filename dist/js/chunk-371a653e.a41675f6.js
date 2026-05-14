@@ -2647,25 +2647,15 @@
             var t = this
               , e = t.$createElement
               , n = t._self._c || e;
-            return n("p", {
-                staticClass: "clearfix mb-0"
-            }, [n("span", {
-                staticClass: "float-md-left d-block d-md-inline-block mt-25"
-            }, [t._v(" COPYRIGHT © " + t._s((new Date).getFullYear()) + " "), n("span", {
-                staticStyle: {
-                    color: "var(--primary)"
+            return n("div", {
+                style: {
+                    height: "5px",
+                    background: "linear-gradient(90deg,#4a90d9,rgba(74,144,217,.3),#4a90d9)",
+                    width: "100%",
+                    display: "block",
+                    borderRadius: "2px"
                 }
-            }, [t._v("Contasy")]), n("span", {
-                staticClass: "d-none d-sm-inline-block"
-            }, [t._v(", Todos direitos reservados")])]), n("span", {
-                staticClass: "float-md-right d-none d-md-block"
-            }, [t._v("Feito com "), n("feather-icon", {
-                staticClass: "text-danger stroke-current",
-                attrs: {
-                    icon: "HeartIcon",
-                    size: "21"
-                }
-            })], 1)])
+            })
         }
           , r = []
           , o = {

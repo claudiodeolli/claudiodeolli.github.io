@@ -1,5 +1,5 @@
 /* ============================================================
-   Contasy – Mock API Interceptor
+   Contasy â€“ Mock API Interceptor
    Intercepta XMLHttpRequest para api-contasy.com e retorna
    dados mockados após um delay (skeleton effect).
    ============================================================ */
@@ -8,7 +8,7 @@
 
   var DELAY = 1800; // ms de skeleton antes de exibir dados
 
-  /* ── Helpers ─────────────────────────────────────────────── */
+  /* â”€â”€ Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   function month(mm, yyyy, revenue, entries, expenses, taxes, rbt12, rbt12p, range, limit, rate) {
     var pad = mm < 10 ? '0' + mm : '' + mm;
     return {
@@ -25,7 +25,7 @@
     };
   }
 
-  /* ── Dados mensais (todos em centavos) ────────────────────── */
+  /* â”€â”€ Dados mensais (todos em centavos) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   //  tax_period    rev       ent        exp      tax      rbt12     rbt12p   faixa  limite    rate
   var months2024 = [
     month( 1, 2024,  980000, 1180000,  220000,  58800, 10800000,  9200000, 1, 18000000, 6.0),
@@ -57,7 +57,7 @@
     month(12, 2025, 2480000, 2976000,  425000, 148800, 22600000, 19800000, 2, 36000000, 11.2)
   ];
 
-  /* ── Distribuição de lucros ───────────────────────────────── */
+  /* â”€â”€ Distribuição de lucros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   function profitMonths(year) {
     var baseAmounts = [410000,480000,500000,520000,550000,530000,560000,590000,570000,620000,660000,680000];
     return baseAmounts.map(function (amt, idx) {
@@ -66,7 +66,7 @@
     });
   }
 
-  /* ── Respostas mockadas ──────────────────────────────────── */
+  /* â”€â”€ Respostas mockadas â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   var MOCK = {
     '/company/finance': function () {
       return {
@@ -86,12 +86,12 @@
         profitDistribution: {
           '2024': {
             total: 5670000,
-            directors: [{ director_id: 1, name: 'MARSHALLS EMPRESARIAIS E DIGITAIS NEGOCIOS DIGITAIS LTDA', total: 5670000 }],
+            directors: [{ director_id: 1, name: 'Marshalls Corporate and Digital Business', total: 5670000 }],
             months: profitMonths(2024)
           },
           '2025': {
             total: 6670000,
-            directors: [{ director_id: 1, name: 'MARSHALLS EMPRESARIAIS E DIGITAIS NEGOCIOS DIGITAIS LTDA', total: 6670000 }],
+            directors: [{ director_id: 1, name: 'Marshalls Corporate and Digital Business', total: 6670000 }],
             months: profitMonths(2025)
           }
         }
@@ -101,7 +101,7 @@
     '/company/details': function () {
       return {
         id: 1,
-        name: 'MARSHALLS EMPRESARIAIS E DIGITAIS NEGOCIOS DIGITAIS LTDA',
+        name: 'Marshalls Corporate and Digital Business',
         tax_regime: 'simples_nacional',
         cnpj: '00.000.000/0001-00',
         opened_at: '2020-01-01',
@@ -125,7 +125,7 @@
         profileComplete: true,
         affiliate: false,
         force_login: 0,
-          companies: [{ id: 1, name: 'MARSHALLS EMPRESARIAIS E DIGITAIS NEGOCIOS DIGITAIS LTDA', opened_at: '2020-01-01' }],
+          companies: [{ id: 1, name: 'Marshalls Corporate and Digital Business', opened_at: '2020-01-01' }],
         ability: [
           { action: 'read', subject: 'panel' },
           { action: 'read', subject: 'user' },
@@ -141,7 +141,7 @@
     }
   };
 
-  /* ── Detecta qual mock usar baseado na URL ───────────────── */
+  /* â”€â”€ Detecta qual mock usar baseado na URL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   function getMock(url) {
     for (var pattern in MOCK) {
       if (url.indexOf(pattern) !== -1) {
@@ -151,7 +151,7 @@
     return null;
   }
 
-  /* ── Interceptor de XMLHttpRequest ───────────────────────── */
+  /* â”€â”€ Interceptor de XMLHttpRequest â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   var _open = XMLHttpRequest.prototype.open;
   var _send = XMLHttpRequest.prototype.send;
   var _setRequestHeader = XMLHttpRequest.prototype.setRequestHeader;
@@ -231,7 +231,7 @@
 
   console.log('[Mock API] Interceptor ativo para api-contasy.com (delay: ' + DELAY + 'ms)');
 
-  /* ── Logo override via MutationObserver ─────────────────── */
+  /* â”€â”€ Logo override via MutationObserver â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   var LOGO_SVG = '<a href="/" class="brand-logo" style="display:inline-flex;align-items:center;">'
     + '<img src="/img/LogoMarshallsCDB-1-2048x538.png" alt="Logo" style="width:149.98px;height:46.55px;object-fit:contain;" />'
     + '</a>';
@@ -249,7 +249,7 @@
     injectLogo();
   });
 
-  /* ── CSS shims: evita CSS_CHUNK_LOAD_FAILED para chunks ausentes ── */
+  /* â”€â”€ CSS shims: evita CSS_CHUNK_LOAD_FAILED para chunks ausentes â”€â”€ */
   (function () {
     var missingCss = [
       '/css/chunk-0d36f369.d73247e7.css',
@@ -271,7 +271,7 @@
     });
   })();
 
-  /* ── Chunks de rotas registrados via webpackJsonp (antes do app.js) ── */
+  /* â”€â”€ Chunks de rotas registrados via webpackJsonp (antes do app.js) â”€â”€ */
   (function () {
     var wp = window['webpackJsonp'] = window['webpackJsonp'] || [];
 
@@ -292,7 +292,7 @@
     function infoCol(h, label, value) {
       return h('div', { staticClass: 'col-12 col-md-6 mb-2' }, [
         h('div', { staticClass: 'text-muted small mb-25' }, label),
-        h('div', { staticClass: 'font-weight-bold' }, value || '—')
+        h('div', { staticClass: 'font-weight-bold' }, value || 'â€”')
       ]);
     }
 
@@ -311,7 +311,7 @@
       ]);
     }
 
-    /* ── LayoutFull (chunk-2d22bcc3 → "f102") */
+    /* â”€â”€ LayoutFull (chunk-2d22bcc3 â†’ "f102") */
     wp.push([['chunk-2d22bcc3'], {
       'f102': function (t, e) {
         e.__esModule = true;
@@ -324,12 +324,12 @@
       }
     }]);
 
-    /* ── chunks compartilhados (sem entry point próprio) */
+    /* â”€â”€ chunks compartilhados (sem entry point próprio) */
     wp.push([['chunk-d0a9a6f8'], {}]);
     wp.push([['chunk-8d89d014'], {}]);
     wp.push([['chunk-20680bbe'], {}]);
 
-    /* ── /empresa/detalhes (chunk-0d36f369 → "8f8c") */
+    /* â”€â”€ /empresa/detalhes (chunk-0d36f369 â†’ "8f8c") */
     wp.push([['chunk-0d36f369'], {
       '8f8c': function (t, e) {
         e.__esModule = true;
@@ -340,8 +340,8 @@
           render: function (h) {
             var c = this.company;
             var regimeMap = { simples_nacional: 'Simples Nacional', lucro_presumido: 'Lucro Presumido', lucro_real: 'Lucro Real' };
-            var regime = regimeMap[c.tax_regime] || c.tax_regime || '—';
-            var openDate = c.opened_at ? c.opened_at.split('-').reverse().join('/') : '—';
+            var regime = regimeMap[c.tax_regime] || c.tax_regime || 'â€”';
+            var openDate = c.opened_at ? c.opened_at.split('-').reverse().join('/') : 'â€”';
             var guias = [
               { period: '03/2025', type: 'DAS', value: 'R$ 990,00',   due: '20/04/2025', status: 'paid' },
               { period: '04/2025', type: 'DAS', value: 'R$ 1.032,00', due: '20/05/2025', status: 'paid' },
@@ -367,11 +367,11 @@
                     ]),
                     h('div', { staticClass: 'card-body' }, [
                       h('div', { staticClass: 'row' }, [
-                        infoCol(h, 'Razão Social', c.name || 'MARSHALLS EMPRESARIAIS E DIGITAIS NEGOCIOS DIGITAIS LTDA'),
+                        infoCol(h, 'Razão Social', c.name || 'Marshalls Corporate and Digital Business'),
                         infoCol(h, 'CNPJ', '00.000.000/0001-00'),
                         infoCol(h, 'Regime Tributário', regime),
                         infoCol(h, 'Data de Abertura', openDate),
-                        infoCol(h, 'CNAE Principal', '62.01-5-01 – Desenvolvimento de software'),
+                        infoCol(h, 'CNAE Principal', '62.01-5-01 â€“ Desenvolvimento de software'),
                         infoCol(h, 'E-mail Fiscal', 'fiscal@contasy.com.br'),
                         infoCol(h, 'Telefone', '(11) 99999-9999'),
                         infoCol(h, 'Sócio Administrador', 'Usuário Demo')
@@ -413,7 +413,7 @@
       }
     }]);
 
-    /* ── /impostos (chunk-cf639660 → "d58f5") */
+    /* â”€â”€ /impostos (chunk-cf639660 â†’ "d58f5") */
     wp.push([['chunk-cf639660'], {
       'd58f5': function (t, e) {
         e.__esModule = true;
@@ -462,7 +462,7 @@
                           staticClass: 'mr-1'
                         }, [h('feather-icon', { attrs: { icon: 'FileTextIcon', size: '16' } })]),
                         h('div', [
-                          h('div', { staticClass: 'font-weight-bold' }, tx.type + ' – Competência ' + tx.period),
+                          h('div', { staticClass: 'font-weight-bold' }, tx.type + ' â€“ Competência ' + tx.period),
                           h('small', { staticClass: 'text-muted' }, 'Vencimento: ' + tx.due)
                         ])
                       ]),
@@ -480,7 +480,7 @@
       }
     }]);
 
-    /* ── /declaracoes (chunk-5b77a0d8 → "bed4") */
+    /* â”€â”€ /declaracoes (chunk-5b77a0d8 â†’ "bed4") */
     wp.push([['chunk-5b77a0d8'], {
       'bed4': function (t, e) {
         e.__esModule = true;
@@ -529,7 +529,7 @@
                           staticClass: 'mr-1'
                         }, [h('feather-icon', { attrs: { icon: 'CalendarIcon', size: '16' } })]),
                         h('div', [
-                          h('div', { staticClass: 'font-weight-bold' }, d.type + ' – ' + d.period),
+                          h('div', { staticClass: 'font-weight-bold' }, d.type + ' â€“ ' + d.period),
                           h('small', { staticClass: 'text-muted' }, d.sent ? 'Enviada em ' + d.sent : 'Prazo: ' + d.due)
                         ])
                       ]),
@@ -544,7 +544,7 @@
       }
     }]);
 
-    /* ── /assinaturas (chunk-8e696c16 → "6c5e") */
+    /* â”€â”€ /assinaturas (chunk-8e696c16 â†’ "6c5e") */
     wp.push([['chunk-8e696c16'], {
       '6c5e': function (t, e) {
         e.__esModule = true;
@@ -596,7 +596,7 @@
                       ),
                       h('hr'),
                       h('div', { staticClass: 'text-center mt-1' }, [
-                        h('p', { staticClass: 'text-muted small mb-1' }, 'Próxima cobrança: 01/06/2025 · Renovação automática'),
+                        h('p', { staticClass: 'text-muted small mb-1' }, 'Próxima cobrança: 01/06/2025 Â· Renovação automática'),
                         h('b-button', { attrs: { variant: 'outline-primary', size: 'sm' } }, 'Gerenciar pagamento')
                       ])
                     ])
@@ -609,7 +609,7 @@
       }
     }]);
 
-    /* ── /perfil (chunk-a994ecf2 → "6617") */
+    /* â”€â”€ /perfil (chunk-a994ecf2 â†’ "6617") */
     wp.push([['chunk-a994ecf2'], {
       '6617': function (t, e) {
         e.__esModule = true;
@@ -656,7 +656,7 @@
       }
     }]);
 
-    /* ── /certificado-digital (chunk-7d76483f → "eb67") */
+    /* â”€â”€ /certificado-digital (chunk-7d76483f â†’ "eb67") */
     wp.push([['chunk-7d76483f'], {
       'eb67': function (t, e) {
         e.__esModule = true;
@@ -679,7 +679,7 @@
                           h('feather-icon', { attrs: { icon: 'ServerIcon', size: '18' }, staticClass: 'mr-75 text-primary' }),
                           h('h4', { staticClass: 'mb-0' }, 'Certificado Digital e-CPF')
                         ]),
-                        h('b-badge', { attrs: { variant: 'light-success', pill: true } }, '✓  Válido')
+                        h('b-badge', { attrs: { variant: 'light-success', pill: true } }, 'âœ“  Válido')
                       ])
                     ]),
                     h('div', { staticClass: 'card-body' }, [
@@ -701,7 +701,7 @@
       }
     }]);
 
-    /* ── /empresas (chunk-665fac01 → "6382") – layout: full */
+    /* â”€â”€ /empresas (chunk-665fac01 â†’ "6382") â€“ layout: full */
     wp.push([['chunk-665fac01'], {
       '6382': function (t, e) {
         e.__esModule = true;
@@ -720,7 +720,7 @@
           render: function (h) {
             var self = this;
             var companies = self.user.companies || [
-              { id: 1, name: 'MARSHALLS EMPRESARIAIS E DIGITAIS NEGOCIOS DIGITAIS LTDA', opened_at: '2020-01-01' }
+              { id: 1, name: 'Marshalls Corporate and Digital Business', opened_at: '2020-01-01' }
             ];
             return h('div', {
               staticClass: 'd-flex align-items-center justify-content-center',
@@ -762,7 +762,7 @@
       }
     }]);
 
-    /* ── /parceiros (chunk-a924f88a → "1aa8") */
+    /* â”€â”€ /parceiros (chunk-a924f88a â†’ "1aa8") */
     wp.push([['chunk-a924f88a'], {
       '1aa8': function (t, e) {
         e.__esModule = true;
@@ -816,16 +816,16 @@
       }
     }]);
 
-    /* ── /impostos/:id (chunk-1e1e2ade → "7110") */
+    /* â”€â”€ /impostos/:id (chunk-1e1e2ade â†’ "7110") */
     wp.push([['chunk-1e1e2ade'], {
       '7110': function (t, e) {
         e.__esModule = true;
         var taxData = {
-          '1': { period: '01/2025', type: 'DAS', due: '20/02/2025', amount: 'R$ 852,00',   status: 'paid',    revenue: 'R$ 14.200,00', rate: '6,0%', faixa: '1ª Faixa' },
-          '2': { period: '02/2025', type: 'DAS', due: '20/03/2025', amount: 'R$ 948,00',   status: 'paid',    revenue: 'R$ 15.800,00', rate: '6,0%', faixa: '1ª Faixa' },
-          '3': { period: '03/2025', type: 'DAS', due: '20/04/2025', amount: 'R$ 990,00',   status: 'paid',    revenue: 'R$ 16.500,00', rate: '6,0%', faixa: '1ª Faixa' },
-          '4': { period: '04/2025', type: 'DAS', due: '20/05/2025', amount: 'R$ 1.032,00', status: 'paid',    revenue: 'R$ 17.200,00', rate: '6,0%', faixa: '1ª Faixa' },
-          '5': { period: '05/2025', type: 'DAS', due: '20/06/2025', amount: 'R$ 1.110,00', status: 'pending', revenue: 'R$ 18.500,00', rate: '6,0%', faixa: '1ª Faixa' }
+          '1': { period: '01/2025', type: 'DAS', due: '20/02/2025', amount: 'R$ 852,00',   status: 'paid',    revenue: 'R$ 14.200,00', rate: '6,0%', faixa: '1Âª Faixa' },
+          '2': { period: '02/2025', type: 'DAS', due: '20/03/2025', amount: 'R$ 948,00',   status: 'paid',    revenue: 'R$ 15.800,00', rate: '6,0%', faixa: '1Âª Faixa' },
+          '3': { period: '03/2025', type: 'DAS', due: '20/04/2025', amount: 'R$ 990,00',   status: 'paid',    revenue: 'R$ 16.500,00', rate: '6,0%', faixa: '1Âª Faixa' },
+          '4': { period: '04/2025', type: 'DAS', due: '20/05/2025', amount: 'R$ 1.032,00', status: 'paid',    revenue: 'R$ 17.200,00', rate: '6,0%', faixa: '1Âª Faixa' },
+          '5': { period: '05/2025', type: 'DAS', due: '20/06/2025', amount: 'R$ 1.110,00', status: 'pending', revenue: 'R$ 18.500,00', rate: '6,0%', faixa: '1Âª Faixa' }
         };
         e.default = {
           computed: {
@@ -897,7 +897,7 @@
       }
     }]);
 
-    /* ── /declaracoes/:id (chunk-546837cd → "4f32") */
+    /* â”€â”€ /declaracoes/:id (chunk-546837cd â†’ "4f32") */
     wp.push([['chunk-546837cd'], {
       '4f32': function (t, e) {
         e.__esModule = true;
@@ -953,8 +953,8 @@
                     infoCol(h, 'Período de apuração', d.period),
                     infoCol(h, 'Tipo',                d.type),
                     infoCol(h, 'Prazo de entrega',    d.due),
-                    infoCol(h, 'Data de envio',       d.sent || '—'),
-                    infoCol(h, 'Protocolo',            d.protocol || '—')
+                    infoCol(h, 'Data de envio',       d.sent || 'â€”'),
+                    infoCol(h, 'Protocolo',            d.protocol || 'â€”')
                   ]),
                   h('b-alert', {
                     attrs: { show: true, variant: d.status === 'sent' ? 'success' : 'warning' },
@@ -968,7 +968,7 @@
       }
     }]);
 
-    /* ── /impostos/:id/declaracao (chunk-3419fd6c → "5bf0") */
+    /* â”€â”€ /impostos/:id/declaracao (chunk-3419fd6c â†’ "5bf0") */
     wp.push([['chunk-3419fd6c'], {
       '5bf0': function (t, e) {
         e.__esModule = true;
@@ -1029,7 +1029,7 @@
 
   })();
 
-  /* ── Menu item hover styles ─────────────────────────────── */
+  /* â”€â”€ Menu item hover styles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   (function () {
     var style = document.createElement('style');
     style.textContent = [
