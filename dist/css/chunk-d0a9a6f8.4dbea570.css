@@ -1,4 +1,4 @@
-#PanelChartAnalitycs .apexcharts-tooltip {
+﻿#PanelChartAnalitycs .apexcharts-tooltip {
     display: none
 }
 
@@ -133,15 +133,15 @@
 }
 
 [dir] .timeline-variant-primary.timeline-item-fill-border-primary[data-v-4bbac430] {
-    border-color: #0090ff!important
+    border-color: #0052ff!important
 }
 
 [dir] .timeline-variant-primary.timeline-item-fill-border-primary[data-v-4bbac430]:last-of-type:after {
-    background: linear-gradient(#0090ff,#fff)
+    background: linear-gradient(#0052ff,#fff)
 }
 
 [dir] .timeline-variant-primary .timeline-item-point[data-v-4bbac430] {
-    background-color: #0090ff
+    background-color: #0052ff
 }
 
 [dir] .timeline-variant-primary .timeline-item-point[data-v-4bbac430]:before {
@@ -149,11 +149,11 @@
 }
 
 .timeline-variant-primary .timeline-item-icon[data-v-4bbac430] {
-    color: #0090ff
+    color: #0052ff
 }
 
 [dir] .timeline-variant-primary .timeline-item-icon[data-v-4bbac430] {
-    border: 1px solid #0090ff
+    border: 1px solid #0052ff
 }
 
 [dir] .timeline-variant-secondary.timeline-item-fill-border-secondary[data-v-4bbac430] {
