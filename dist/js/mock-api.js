@@ -86,12 +86,12 @@
         profitDistribution: {
           '2024': {
             total: 5670000,
-            directors: [{ director_id: 1, name: 'Marshalls Corporate and Digital Business', total: 5670000 }],
+            directors: [{ director_id: 1, name: 'MARSHALLS CORPORATE AND DIGITAL BUSINESS', total: 5670000 }],
             months: profitMonths(2024)
           },
           '2025': {
             total: 6670000,
-            directors: [{ director_id: 1, name: 'Marshalls Corporate and Digital Business', total: 6670000 }],
+            directors: [{ director_id: 1, name: 'MARSHALLS CORPORATE AND DIGITAL BUSINESS', total: 6670000 }],
             months: profitMonths(2025)
           }
         }
@@ -101,7 +101,7 @@
     '/company/details': function () {
       return {
         id: 1,
-        name: 'Marshalls Corporate and Digital Business',
+        name: 'MARSHALLS CORPORATE AND DIGITAL BUSINESS',
         tax_regime: 'simples_nacional',
         cnpj: '00.000.000/0001-00',
         opened_at: '2020-01-01',
@@ -125,7 +125,7 @@
         profileComplete: true,
         affiliate: false,
         force_login: 0,
-          companies: [{ id: 1, name: 'Marshalls Corporate and Digital Business', opened_at: '2020-01-01' }],
+          companies: [{ id: 1, name: 'MARSHALLS CORPORATE AND DIGITAL BUSINESS', opened_at: '2020-01-01' }],
         ability: [
           { action: 'read', subject: 'panel' },
           { action: 'read', subject: 'user' },
@@ -367,7 +367,7 @@
                     ]),
                     h('div', { staticClass: 'card-body' }, [
                       h('div', { staticClass: 'row' }, [
-                        infoCol(h, 'Razão Social', c.name || 'Marshalls Corporate and Digital Business'),
+                        infoCol(h, 'Razão Social', c.name || 'MARSHALLS CORPORATE AND DIGITAL BUSINESS'),
                         infoCol(h, 'CNPJ', '00.000.000/0001-00'),
                         infoCol(h, 'Regime Tributário', regime),
                         infoCol(h, 'Data de Abertura', openDate),
@@ -720,7 +720,7 @@
           render: function (h) {
             var self = this;
             var companies = self.user.companies || [
-              { id: 1, name: 'Marshalls Corporate and Digital Business', opened_at: '2020-01-01' }
+              { id: 1, name: 'MARSHALLS CORPORATE AND DIGITAL BUSINESS', opened_at: '2020-01-01' }
             ];
             return h('div', {
               staticClass: 'd-flex align-items-center justify-content-center',

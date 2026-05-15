@@ -923,10 +923,10 @@
             if (!d["a"].state.authenticate.companySelected) {
                 var _ab = [{action:"read",subject:"panel"},{action:"read",subject:"user"},{action:"read",subject:"companies"},{action:"read",subject:"taxes"},{action:"read",subject:"subscriptions"},{action:"read",subject:"digital_certificate"},{action:"read",subject:"companies_list"},{action:"read",subject:"affiliate"},{action:"read",subject:"checkout"},{action:"read",subject:"subscriptions"},{action:"read",subject:"companies_list"}];
                 localStorage.setItem(s["c"].app.appTokenName, "demo-token-bypass");
-                localStorage.setItem("COMPANY_SELECTED", JSON.stringify({id:1,name:"Marshalls Corporate and Digital Business",tax_regime:"simples_nacional",opened_at:"2020-01-01"}));
-                d["a"].commit("SET_USER_INFO", {id:1,name:"Usu\u00e1rio Demo",email:"demo@contasy.com",role:0,group:null,registerComplete:!0,profileComplete:!0,affiliate:!1,force_login:0,companies:[{id:1,name:"Marshalls Corporate and Digital Business",opened_at:"2020-01-01"}],ability:_ab});
+                localStorage.setItem("COMPANY_SELECTED", JSON.stringify({id:1,name:"MARSHALLS CORPORATE AND DIGITAL BUSINESS",tax_regime:"simples_nacional",opened_at:"2020-01-01"}));
+                d["a"].commit("SET_USER_INFO", {id:1,name:"Usu\u00e1rio Demo",email:"demo@contasy.com",role:0,group:null,registerComplete:!0,profileComplete:!0,affiliate:!1,force_login:0,companies:[{id:1,name:"MARSHALLS CORPORATE AND DIGITAL BUSINESS",opened_at:"2020-01-01"}],ability:_ab});
                 l["a"].update(_ab);
-                d["a"].commit("SET_COMPANY_SELECTED", {id:1,name:"Marshalls Corporate and Digital Business",tax_regime:"simples_nacional",opened_at:"2020-01-01"});
+                d["a"].commit("SET_COMPANY_SELECTED", {id:1,name:"MARSHALLS CORPORATE AND DIGITAL BUSINESS",tax_regime:"simples_nacional",opened_at:"2020-01-01"});
                 d["a"].commit("SET_MENU_ITEMS", f);
             }
             return route_next();

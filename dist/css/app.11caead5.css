@@ -4557,7 +4557,7 @@ a.btn.disabled,fieldset:disabled a.btn {
 }
 
 [dir] .btn-primary {
-    background-color: #0052ff;
+    background: linear-gradient(135deg,#0052ff 0%,#00b7ff 100%);
     border-color: #0052ff
 }
 
@@ -21072,7 +21072,7 @@ svg.font-large-5 {
 
 [dir] .btn-primary {
     border-color: #0052ff!important;
-    background-color: #0052ff!important
+    background: linear-gradient(135deg,#0052ff 0%,#00b7ff 100%) !important;
 }
 
 .btn-primary.active,.btn-primary:active,.btn-primary:focus {
@@ -26721,7 +26721,7 @@ footer.footer span i,footer.footer span svg {
 }
 
 [dir] .main-menu.menu-light .navigation>li.active>a {
-    box-shadow: 0 8px 18px -6px rgba(0,82,255,.6);
+    box-shadow: 0 0 10px 1px rgba(0,82,255,.6);
     border-radius: 4px
 }
 
@@ -26809,7 +26809,7 @@ footer.footer span i,footer.footer span svg {
 }
 
 [dir] .main-menu.menu-light .navigation>li ul .active {
-    box-shadow: 0 8px 18px -6px rgba(0,82,255,.6);
+    box-shadow: 0 0 10px 1px rgba(0,82,255,.6);
     border-radius: 4px
 }
 
@@ -26953,7 +26953,7 @@ footer.footer span i,footer.footer span svg {
 }
 
 [dir] .main-menu.menu-dark .navigation>li.active>a {
-    box-shadow: 0 8px 18px -6px rgba(0,82,255,.6);
+    box-shadow: 0 0 10px 1px rgba(0,82,255,.6);
     border-radius: 4px
 }
 
@@ -27041,7 +27041,7 @@ footer.footer span i,footer.footer span svg {
 }
 
 [dir] .main-menu.menu-dark .navigation>li ul .active {
-    box-shadow: 0 8px 18px -6px rgba(0,82,255,.6);
+    box-shadow: 0 0 10px 1px rgba(0,82,255,.6);
     border-radius: 4px
 }
 
@@ -27096,7 +27096,7 @@ footer.footer span i,footer.footer span svg {
 }
 
 [dir] .main-menu .shadow-bottom {
-    margin-top: -.7rem;
+    margin-top: -.45rem;
     background: linear-gradient(#fff 41%,hsla(0,0%,100%,.11) 95%,hsla(0,0%,100%,0))
 }
 
