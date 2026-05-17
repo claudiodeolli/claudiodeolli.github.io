@@ -31095,29 +31095,7 @@
                     modalShow: !1
                 }
             },
-            created: function() {
-                var t = this
-                  , e = JSON.parse(localStorage.getItem("WelcomeModal"));
-                if (null === e)
-                    localStorage.setItem("WelcomeModal", JSON.stringify([{
-                        show: !0,
-                        company: this.$store.state.authenticate.companySelected.id
-                    }])),
-                    this.modalShow = !0;
-                else {
-                    Array.isArray(e) || (e = []);
-                    var i = e.find((function(e) {
-                        return e.company === t.$store.state.authenticate.companySelected.id
-                    }
-                    ));
-                    i ? i.show && (this.modalShow = !0) : (e.push({
-                        show: !0,
-                        company: this.$store.state.authenticate.companySelected.id
-                    }),
-                    localStorage.setItem("WelcomeModal", JSON.stringify(e)),
-                    this.modalShow = !0)
-                }
-            },
+            created: function() {},
             methods: {
                 closeModal: function() {
                     var t = this;

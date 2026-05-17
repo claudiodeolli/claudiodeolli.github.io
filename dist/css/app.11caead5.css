@@ -4553,12 +4553,12 @@ a.btn.disabled,fieldset:disabled a.btn {
 }
 
 .btn-primary {
-    color: #fff
+    color: #fff;
+    border-right: 0;
 }
 
 [dir] .btn-primary {
     background: linear-gradient(135deg,#0052ff 0%,#00b7ff 100%);
-    border-color: #0052ff
 }
 
 .btn-primary:hover {
@@ -16505,7 +16505,8 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 }
 
 [dir=ltr] .btn-group>.btn:not([class*=btn-outline-]):not([class*=btn-flat-]):not([class*=btn-gradient-]):not([class*=btn-relief-]):last-child,[dir=ltr] .btn-group>.btn:not([class*=btn-outline-]):not([class*=btn-flat-]):not([class*=btn-gradient-]):not([class*=btn-relief-]):last-of-type,[dir=rtl] .btn-group>.btn:not([class*=btn-outline-]):not([class*=btn-flat-]):not([class*=btn-gradient-]):not([class*=btn-relief-]):first-child,[dir=rtl] .btn-group>.btn:not([class*=btn-outline-]):not([class*=btn-flat-]):not([class*=btn-gradient-]):not([class*=btn-relief-]):first-of-type {
-    border-right-color: transparent!important
+    border-right-color: transparent!important;
+    border-right: 0 !important;
 }
 
 [dir=rtl] .btn-group>.btn:not([class*=btn-outline-]):not([class*=btn-flat-]):not([class*=btn-gradient-]):not([class*=btn-relief-]):last-child,[dir=rtl] .btn-group>.btn:not([class*=btn-outline-]):not([class*=btn-flat-]):not([class*=btn-gradient-]):not([class*=btn-relief-]):last-of-type {
@@ -21067,11 +21068,11 @@ svg.font-large-5 {
 }
 
 .btn-primary {
-    color: #fff!important
+    color: #fff!important;
+    border-right: 0;
 }
 
 [dir] .btn-primary {
-    border-color: #0052ff!important;
     background: linear-gradient(135deg,#0052ff 0%,#00b7ff 100%) !important;
 }
 

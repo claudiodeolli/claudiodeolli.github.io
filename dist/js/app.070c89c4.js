@@ -841,12 +841,12 @@
             gate: "taxes"
         }, {
             title: "Indicadores",
-            route: "declaracoes",
+            route: "indicadores",
             icon: "UserIcon",
             gate: "taxes"
         }, {
             title: "NFS-e Recebidas",
-            href: "https://notasy.com.br",
+            route: "declaracoes",
             icon: "FolderIcon",
             gate: "taxes"
         }, {
@@ -856,7 +856,7 @@
             gate: "subscriptions"
         }, {
             title: "Requerimentos",
-            href: "#",
+            route: "requerimentos",
             icon: "ClipboardIcon",
             gate: "subscriptions"
         }, {
@@ -879,7 +879,7 @@
             gate: "companies_list"
         }, {
             title: "NFS-e Emitidas",
-            href: "#",
+            route: "impostos",
             icon: "DollarSignIcon",
             gate: "user"
         }, {
@@ -892,12 +892,12 @@
             gate: "user"
         }, {
             title: "Checkouts",
-            href: "#",
+            route: "certificado-digital",
             icon: "ShoppingCartIcon",
             gate: "user"
         }, {
             title: "E-mails",
-            href: "#",
+            route: "empresa/detalhes",
             icon: "MailIcon",
             gate: "user"
         }, {
@@ -1988,8 +1988,7 @@
                     action: "read",
                     subject: "companies_list"
                 },
-                pageTitle: "Empresas",
-                layout: "full"
+                pageTitle: "Empresas"
             },
             beforeEnter: p
         }, {
