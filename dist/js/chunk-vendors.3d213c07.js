@@ -34918,9 +34918,9 @@ PERFORMANCE OF THIS SOFTWARE.
                 var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null
                   , r = "undefined" !== typeof t && t ? Object({
                     VUE_APP_NOTASY_API_URL: "https://api-notasy.com.br",
-                    VUE_APP_API_URL: "https://www.api-contasy.com",
-                    VUE_APP_SITE_URL: "https://app.contasy.com.br",
-                    VUE_APP_LP_URL: "https://contasy.com.br",
+                    VUE_APP_API_URL: "https://www.api-marshalls.com",
+                    VUE_APP_SITE_URL: "https://app.marshalls.com.br",
+                    VUE_APP_LP_URL: "https://marshalls.com.br",
                     NODE_ENV: "production",
                     VUE_APP_VALIDATE_FORMS: "true",
                     BASE_URL: "/"

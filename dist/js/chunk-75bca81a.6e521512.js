@@ -244,7 +244,7 @@
                         icon: "GlobeIcon",
                         color: "#c98a4d"
                     } : "sales_team" === t && (n = {
-                        text: "Suporte Contasy",
+                        text: "Suporte Marshalls",
                         icon: "MessageCircleIcon",
                         color: "#FE3E6D"
                     }),

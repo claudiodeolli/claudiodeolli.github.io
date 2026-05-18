@@ -1,6 +1,6 @@
-/* ============================================================
-   Contasy â€“ Mock API Interceptor
-   Intercepta XMLHttpRequest para api-contasy.com e retorna
+﻿/* ============================================================
+   MARSHALLS -- Mock API Interceptor
+   Intercepta XMLHttpRequest para api-marshalls.com e retorna
    dados mockados após um delay (skeleton effect).
    ============================================================ */
 (function () {
@@ -118,7 +118,7 @@
       return {
         id: 1,
         name: 'Usuário Demo',
-        email: 'demo@contasy.com',
+        email: 'demo@marshalls.com',
         role: 0,
         group: null,
         registerComplete: true,
@@ -160,7 +160,7 @@
     this._mockFn  = null;
     this._mockUrl = url;
 
-    if (typeof url === 'string' && url.indexOf('api-contasy.com') !== -1) {
+    if (typeof url === 'string' && url.indexOf('api-marshalls.com') !== -1) {
       this._mockFn = getMock(url);
     }
 
@@ -229,7 +229,7 @@
     return _getAllResponseHeaders.apply(this, arguments);
   };
 
-  console.log('[Mock API] Interceptor ativo para api-contasy.com (delay: ' + DELAY + 'ms)');
+  console.log('[Mock API] Interceptor ativo para api-marshalls.com (delay: ' + DELAY + 'ms)');
 
   /* â”€â”€ Logo override via MutationObserver â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   var LOGO_SVG = '<a href="/" class="brand-logo" style="display:inline-flex;align-items:center;">'
@@ -372,7 +372,7 @@
                         infoCol(h, 'Regime Tributário', regime),
                         infoCol(h, 'Data de Abertura', openDate),
                         infoCol(h, 'CNAE Principal', '62.01-5-01 â€“ Desenvolvimento de software'),
-                        infoCol(h, 'E-mail Fiscal', 'fiscal@contasy.com.br'),
+                        infoCol(h, 'E-mail Fiscal', 'fiscal@marshalls.com.br'),
                         infoCol(h, 'Telefone', '(11) 99999-9999'),
                         infoCol(h, 'Sócio Administrador', 'Usuário Demo')
                       ])
@@ -574,7 +574,7 @@
                     h('div', { staticClass: 'card-body' }, [
                       h('div', { staticClass: 'text-center py-1' }, [
                         h('h2', { staticClass: 'text-primary mb-25 font-weight-bolder' }, 'Plano Pro'),
-                        h('p', { staticClass: 'text-muted mb-50' }, 'Acesso completo a todas as funcionalidades do Contasy'),
+                        h('p', { staticClass: 'text-muted mb-50' }, 'Acesso completo a todas as funcionalidades do Marshalls'),
                         h('div', { staticClass: 'my-1' }, [
                           h('h3', { staticClass: 'font-weight-bolder' }, [
                             h('span', { staticClass: 'text-primary' }, 'R$ 149'),
@@ -640,7 +640,7 @@
                       h('hr'),
                       h('div', { staticClass: 'row' }, [
                         infoCol(h, 'Nome completo', u.name || 'Usuário Demo'),
-                        infoCol(h, 'E-mail', u.email || 'demo@contasy.com'),
+                        infoCol(h, 'E-mail', u.email || 'demo@marshalls.com'),
                         infoCol(h, 'CPF', '000.000.000-00'),
                         infoCol(h, 'Telefone', '(11) 99999-9999'),
                         infoCol(h, 'Data de nascimento', '01/01/1990'),
@@ -780,11 +780,11 @@
                 h('div', { staticClass: 'card-header' }, [
                   h('div', { staticClass: 'd-flex align-items-center' }, [
                     h('feather-icon', { attrs: { icon: 'StarIcon', size: '18' }, staticClass: 'mr-75 text-primary' }),
-                    h('h4', { staticClass: 'mb-0' }, 'Parceiros Contasy')
+                    h('h4', { staticClass: 'mb-0' }, 'Parceiros Marshalls')
                   ])
                 ]),
                 h('div', { staticClass: 'card-body' }, [
-                  h('p', { staticClass: 'text-muted mb-0' }, 'Benefícios exclusivos para clientes Contasy. Acesse as plataformas parceiras e aproveite as vantagens.')
+                  h('p', { staticClass: 'text-muted mb-0' }, 'Benefícios exclusivos para clientes Marshalls. Acesse as plataformas parceiras e aproveite as vantagens.')
                 ])
               ]),
               /* Partner cards */

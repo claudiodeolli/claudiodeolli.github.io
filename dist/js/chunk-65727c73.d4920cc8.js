@@ -30960,7 +30960,7 @@
                 staticClass: "font-medium-4 mb-2 font-weight-bold"
             }, [t._v(" Aproveite as vantagens de ser "), a("strong", {
                 staticClass: "text-primary mr-1"
-            }, [t._v("CONTASY!")]), a("span", {
+            }, [t._v("MARSHALLS!")]), a("span", {
                 staticClass: "font-medium-5"
             }, [t._v("🎉")])]), a("div", {
                 staticClass: "mb-2"
@@ -30996,9 +30996,9 @@
                 staticClass: "font-weight-bolder"
             }, [t._v("até 3 dias úteis")])]), a("p", {
                 staticClass: "mb-50"
-            }, [t._v("- Atendimento prioritário para clientes da contasy")]), a("p", {
+            }, [t._v("- Atendimento prioritário para clientes da Marshalls")]), a("p", {
                 staticClass: "mb-50"
-            }, [t._v("- Através desse link clientes da contasy tem "), a("span", {
+            }, [t._v("- Através desse link clientes da Marshalls tem "), a("span", {
                 staticClass: "font-weight-bolder"
             }, [t._v("maiores chances de ter sua conta aprovada")]), t._v(".")])]), a("a", {
                 staticClass: "btn btn-block mt-2 btn-conta-simples text-white",
@@ -31036,7 +31036,7 @@
                 staticClass: "mb-50"
             }, [t._v("- Suporte à sua disposição")]), a("p", {
                 staticClass: "mb-50"
-            }, [t._v("- Através desse link clientes da contasy "), a("span", {
+            }, [t._v("- Através desse link clientes da Marshalls "), a("span", {
                 staticClass: "font-weight-bolder"
             }, [t._v("não precisam ter faturamento mínimo")]), t._v(" para criar conta. ")])]), a("a", {
                 staticClass: "btn btn-block mt-2 btn-appmax text-white",
@@ -31205,7 +31205,7 @@
                                 case 0:
                                     return e.prev = 0,
                                     e.next = 3,
-                                    Promise.all([g.a.get("".concat("https://www.api-contasy.com", "/company/finance/").concat(t.$store.state.authenticate.companySelected.id), Object(p["a"])()), g.a.get("".concat("https://www.api-contasy.com", "/company/details/").concat(t.$store.state.authenticate.companySelected.id), Object(p["a"])())]);
+                                    Promise.all([g.a.get("".concat("https://www.api-marshalls.com", "/company/finance/").concat(t.$store.state.authenticate.companySelected.id), Object(p["a"])()), g.a.get("".concat("https://www.api-marshalls.com", "/company/details/").concat(t.$store.state.authenticate.companySelected.id), Object(p["a"])())]);
                                 case 3:
                                     i = e.sent,
                                     a = Object(s["a"])(i, 2),
