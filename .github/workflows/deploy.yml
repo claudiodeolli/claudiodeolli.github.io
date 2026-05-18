@@ -18,29 +18,6 @@ jobs:
         run: |
           cp -r dist deploy
           touch deploy/.nojekyll
-
-          # ── Patch asset paths: absolute → relative so <base> tag takes effect ──
-          sed -i \
-            -e 's|href="/css/|href="css/|g' \
-            -e 's|href="/js/|href="js/|g' \
-            -e 's|src="/js/|src="js/|g' \
-            -e 's|href="/loader\.css"|href="loader.css"|g' \
-            -e 's|href="/favicon\.ico"|href="favicon.ico"|g' \
-            -e 's|src="/img/|src="img/|g' \
-            deploy/index.html
-
-          # ── Inject <base> tag right after <head> ──
-          sed -i 's|<head>|<head>\n    <base href="/ctasy-cpy/">|' deploy/index.html
-
-          # ── Patch Vue Router base in app.js ──
-          sed -i 's|base:"/"|base:"/ctasy-cpy/"|g' deploy/js/app.070c89c4.js
-
-          # ── Patch theme-routing script: match /ctasy-cpy/N prefix ──
-          sed -i \
-            -e 's|pathname\.match(/\^\\\\/(\\\d+)(\\\\/\.\*)?\$/)|pathname.match(/^\\/ctasy-cpy\\/([0-9]+)(\\/.*)?$/)|g' \
-            deploy/index.html
-
-          # ── 404.html = index.html so direct URL access works (SPA routing) ──
           cp deploy/index.html deploy/404.html
 
       - name: Deploy to gh-pages branch
