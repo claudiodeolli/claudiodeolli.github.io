@@ -878,6 +878,11 @@
             icon: "ArchiveIcon",
             gate: "companies_list"
         }, {
+            title: "Assinaturas",
+            route: "assinaturas",
+            icon: "DollarSignIcon",
+            gate: "user"
+        }, {
             title: "NFS-e Emitidas",
             route: "impostos",
             icon: "DollarSignIcon",

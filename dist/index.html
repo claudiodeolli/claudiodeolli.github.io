@@ -268,7 +268,8 @@
             '[dir=ltr] .main-menu.menu-dark .navigation>li ul .active { background: linear-gradient(135deg,' + c1 + ' 0%,' + c2 + ' 100%) !important; }',
             '[dir=rtl] .main-menu.menu-dark .navigation>li ul .active { background: linear-gradient(-135deg,' + c1 + ' 0%,' + c2 + ' 100%) !important; }',
             '[dir=ltr] .card-congratulations { background: linear-gradient(135deg,' + c1 + ' 0%,' + c2 + ' 100%) !important; }',
-            '[dir=rtl] .card-congratulations { background: linear-gradient(-135deg,' + c1 + ' 0%,' + c2 + ' 100%) !important; }'
+            '[dir=rtl] .card-congratulations { background: linear-gradient(-135deg,' + c1 + ' 0%,' + c2 + ' 100%) !important; }',
+            '.navbar-header { border-bottom-right-radius: .428rem !important; }'
           ].join('\n');
 
           var style = document.createElement('style');
@@ -311,7 +312,7 @@
               inner: '<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="15" y1="13" x2="9" y2="13"/><polyline points="12 10 9 13 12 16"/>'
             },
             'Requerimentos': {
-              viewBox: '0 0 24 24',
+              viewBox: '2.5 2.5 19 19',
               inner: '<path d="M10.5 2.8c.3-.5.9-.8 1.5-.8s1.2.3 1.5.8"/><path d="M18 9a6 6 0 0 0-12 0c0 6.5-3 8.5-3 8.5h18S18 15.5 18 9"/><path d="M13.4 20a1.6 1.6 0 0 1-2.8 0"/>'
             }
           };
@@ -348,6 +349,35 @@
             applyIcons();
           }
 
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+          } else {
+            init();
+          }
+        })();
+        </script>
+        <script>
+        /* Inject div behind .navbar-header.expanded */
+        (function () {
+          function injectNavBg() {
+            var header = document.querySelector('.main-menu .navbar-header.expanded');
+            if (!header || document.querySelector('[data-nb-bg]')) return;
+            var menu = header.parentNode;
+            var div = document.createElement('div');
+            div.setAttribute('data-nb-bg', '1');
+            div.style.cssText = 'z-index:8;position:absolute;top:0;left:0;width:100%;height:4.45rem;background:#f0f0f0;pointer-events:none;opacity:0;transition:opacity .2s ease;';
+            menu.insertBefore(div, header);
+
+            menu.addEventListener('mouseenter', function () { div.style.opacity = '1'; });
+            menu.addEventListener('mouseleave', function () { div.style.opacity = '0'; });
+          }
+
+          var _nbObs = new MutationObserver(injectNavBg);
+          function init() {
+            var app = document.getElementById('app');
+            if (app) _nbObs.observe(app, { childList: true, subtree: true });
+            setTimeout(injectNavBg, 300);
+          }
           if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', init);
           } else {
@@ -567,6 +597,46 @@
             }
           };
 
+          var AssinaturasPage = {
+            render: function (h) {
+              var plans = [
+                { name: 'Starter',     price: 'R$ 49',  desc: 'Ideal para MEI e pequenos negócios',   features: ['1 empresa', 'Emissão de guias DAS', 'Suporte por e-mail'],                   variant: 'light-info',    active: false },
+                { name: 'Pro',         price: 'R$ 149', desc: 'Para empresas em crescimento',          features: ['3 empresas', 'Declarações acessórias', 'Suporte prioritário', 'Certificado digital'], variant: 'light-primary', active: true  },
+                { name: 'Enterprise',  price: 'R$ 349', desc: 'Para negócios de maior porte',          features: ['Ilimitado', 'Tudo do Pro', 'Gerente dedicado', 'API de integração'],      variant: 'light-success', active: false }
+              ];
+              return h('div', [
+                h('div', { class: 'row' }, plans.map(function (p) {
+                  return h('div', { class: 'col-12 col-md-4 mb-1', key: p.name }, [
+                    h('div', { class: 'card h-100', style: p.active ? 'border: 2px solid #0052ff;' : '' }, [
+                      h('div', { class: 'card-header d-flex align-items-center justify-content-between' }, [
+                        h('h4', { class: 'mb-0 font-weight-bolder' }, p.name),
+                        p.active ? h('span', { class: 'badge badge-pill badge-light-primary' }, 'Plano atual') : null
+                      ]),
+                      h('div', { class: 'card-body' }, [
+                        h('div', { class: 'text-center mb-1' }, [
+                          h('h2', { class: 'font-weight-bolder text-primary' }, [
+                            p.price, h('small', { class: 'text-muted font-weight-normal font-small-3' }, '/mês')
+                          ]),
+                          h('p', { class: 'text-muted small' }, p.desc)
+                        ]),
+                        h('ul', { class: 'list-group list-group-flush' }, p.features.map(function (f) {
+                          return h('li', { class: 'list-group-item d-flex align-items-center px-0', key: f }, [
+                            mkAvatar(h, 'CheckIcon', 'light-success', 22),
+                            h('span', { class: 'ml-75' }, f)
+                          ]);
+                        }))
+                      ]),
+                      h('div', { class: 'card-footer text-center' }, [
+                        h('button', { class: 'btn ' + (p.active ? 'btn-primary' : 'btn-outline-primary') + ' btn-block' },
+                          p.active ? 'Plano ativo' : 'Assinar plano')
+                      ])
+                    ])
+                  ]);
+                }))
+              ]);
+            }
+          };
+
           /* ── Register routes once the Vue instance is ready ── */
           function registerRoutes() {
             var appEl = document.getElementById('app');
@@ -585,6 +655,12 @@
                 name: 'requerimentos',
                 component: RequerimentosPage,
                 meta: { gate: { action: 'read', subject: 'subscriptions' }, pageTitle: 'Requerimentos', breadcrumb: [{ text: 'Requerimentos', active: true }] }
+              },
+              {
+                path: '/assinaturas',
+                name: 'assinaturas',
+                component: AssinaturasPage,
+                meta: { gate: { action: 'read', subject: 'user' }, pageTitle: 'Assinaturas', breadcrumb: [{ text: 'Assinaturas', active: true }] }
               }
             ]);
           }

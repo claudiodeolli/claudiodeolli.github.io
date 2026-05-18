@@ -27093,11 +27093,11 @@ footer.footer span i,footer.footer span svg {
     height: 50px;
     width: 100%;
     pointer-events: none;
-    filter: blur(5px)
+    filter: blur(1px)
 }
 
 [dir] .main-menu .shadow-bottom {
-    margin-top: -.45rem;
+    margin-top: -.25rem;
     background: linear-gradient(#fff 41%,hsla(0,0%,100%,.11) 95%,hsla(0,0%,100%,0))
 }
 
@@ -27114,6 +27114,8 @@ footer.footer span i,footer.footer span svg {
     width: 260px;
     height: 4.45rem;
     position: relative;
+    background: #fff;
+    z-index: 9;
     transition: all .3s ease,background 0s
 }
 
@@ -38023,7 +38025,7 @@ footer.footer .footer-wrapper { padding: 0 !important; }
 footer.footer { min-height: 0 !important; position: static !important; }
 
 /* Shadow-bottom menor */
-.main-menu .shadow-bottom { height: 25px !important; filter: blur(3px) !important; }
+.main-menu .shadow-bottom { height: 25px !important; filter: blur(1px) !important; }
 
 
 /* Footer sempre colado no fundo - layout flex */
